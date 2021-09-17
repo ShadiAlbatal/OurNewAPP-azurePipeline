@@ -6,6 +6,7 @@
 trigger:
 - master
 
+## we can use ubuntu cos core
 pool:
   vmImage: ubuntu-latest
 
