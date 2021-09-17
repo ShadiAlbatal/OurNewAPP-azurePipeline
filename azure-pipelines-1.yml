@@ -17,5 +17,5 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: '**/*.csproj'
+    projects: '**/*.sln'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
