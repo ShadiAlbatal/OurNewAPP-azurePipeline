@@ -7,7 +7,9 @@ trigger:
 - master
 
 ## we can use ubuntu cos core
-pool: default
+pool:
+  name: default
+  demands: RegistryHack -equals true
 
 variables:
   buildConfiguration: 'Release'
