@@ -19,7 +19,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: 'ourClassLibrary/*.csproj'
+    packagesToPack: 'WebApplication1/ourClassLibrary/*.csproj'
     nobuild: true
     versioningScheme: 'off'
 - task: DotNetCoreCLI@2
