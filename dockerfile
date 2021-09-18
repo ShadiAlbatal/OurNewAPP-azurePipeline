@@ -1,1 +1,1 @@
-FROM microsoft/iis
+FROM mcr.microsoft.com/windows/servercore/iis
