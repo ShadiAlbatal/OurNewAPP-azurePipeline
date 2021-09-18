@@ -9,11 +9,26 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  buildConfiguration: 'Release'
+
 
 steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
     projects: 'WebApplication1/ourClassLibrary'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'ourClassLibrary/*.csproj'
+    nobuild: true
+    versioningScheme: 'off'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'ourClassLibrary/ourClassLibrary.csproj/*.csproj'
+    nobuild: true
+    versioningScheme: 'off'
+variables:
+  buildConfiguration: 'Release'
