@@ -16,19 +16,15 @@ steps:
   inputs:
     command: 'build'
     projects: 'WebApplication1/ourClassLibrary'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
     packagesToPack: 'ourClassLibrary/*.csproj'
     nobuild: true
     versioningScheme: 'off'
-
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'pack'
-    packagesToPack: 'ourClassLibrary/ourClassLibrary.csproj/*.csproj'
-    nobuild: true
-    versioningScheme: 'off'
-variables:
-  buildConfiguration: 'Release'
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'b717f3d3-1120-4695-adb1-3a5a7899e6ce/7d90ceb4-626f-42ac-8fd4-3ff4f32361b8'
